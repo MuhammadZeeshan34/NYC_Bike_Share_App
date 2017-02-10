@@ -1,0 +1,33 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="applicationPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <non-jta-data-source>/DefaultDS</non-jta-data-source>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <!--<property name="hibernate.multiTenancy" value="SCHEMA"/>-->
+            <!--<property name="hibernate.multi_tenant_connection_provider" value="tenantmanagement.MultiTenantConnectionProviderImpl"/>-->
+            <!--<property name="hibernate.tenant_identifier_resolver" value="tenantmanagement.TenantIdResolver" />-->
+        </properties>
+    </persistence-unit>
+
+    <!--<persistence-unit name="secondPersistenceUnit" transaction-type="RESOURCE_LOCAL">-->
+        <!--<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+        <!--<non-jta-data-source>SecondDS</non-jta-data-source>-->
+        <!--<class>models.*</class>-->
+        <!--<properties>-->
+            <!--&lt;!&ndash;Hibernate properties&ndash;&gt;-->
+            <!--<property name="hibernate.show_sql" value="true"/>-->
+            <!--<property name="hibernate.format_sql" value="true"/>-->
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>-->
+
+            <!--<property name="hibernate.connection.CharSet" value="utf8"/>-->
+            <!--<property name="hibernate.connection.characterEncoding" value="utf8"/>-->
+            <!--<property name="hibernate.connection.useUnicode" value="true"/>-->
+        <!--</properties>-->
+    <!--</persistence-unit>-->
+
+</persistence>

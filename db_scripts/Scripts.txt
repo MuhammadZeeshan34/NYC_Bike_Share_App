@@ -1,0 +1,44 @@
+USE nyc_bike_sharing;
+
+
+
+
+CREATE TABLE `Stations` (
+  `station_id` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `short_name` varchar(45) NOT NULL,
+  `lat` float NOT NULL,
+  `lon` float NOT NULL,
+  `region_id` int(11) NOT NULL,
+  `rental_methods` varchar(50) NOT NULL,
+  `capacity` int(11) NOT NULL,
+  `eightd_has_key_dispenser` bit(1) NOT NULL,
+  PRIMARY KEY (`station_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE `station_stats` (
+  `station_id` int(11) NOT NULL,
+  `num_bikes_available` int(5) NOT NULL,
+  `num_bikes_disabled` int(5) NOT NULL,
+  `num_docks_available` int(5) NOT NULL,
+  `num_docks_disabled` int(5) NOT NULL,
+  `is_installed` int(1) NOT NULL,
+  `is_renting` int(1) NOT NULL,
+  `is_returning` int(1) NOT NULL,
+  `last_reported` int(20) NOT NULL,
+  `eightd_has_available_keys` bit(1) NOT NULL,
+  PRIMARY KEY (`station_id`)
+) 
+
+CREATE TABLE `monthly_stats` (
+  `station_id` int(11) NOT NULL,
+  `month` int(11) NOT NULL,
+  `update_count` int(11) DEFAULT NULL,
+  `bike_rides_count` int(11) DEFAULT NULL,
+  `disable_bikes_count` int(11) DEFAULT NULL,
+  PRIMARY KEY (`station_id`,`month`)
+)
+
+

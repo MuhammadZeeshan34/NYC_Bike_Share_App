@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+
+
+GET /save			controllers.NYCBikeSharingAppController.SaveStaticInformationAction()
+
+GET /update			controllers.NYCBikeSharingAppController.UpdateStationsStatsAction()
+
+GET /overall-stats  controllers.NYCBikeSharingAppController.GetOverAllStatsAction()
+
+GET /station-stats/:station_id  controllers.NYCBikeSharingAppController.GetStationStatsAction(station_id : Long)
+
+GET /stations-with-capacity/:num_bikes controllers.NYCBikeSharingAppController.GetListOfStationsWithSpecifiedBikesAction(num_bikes : Long)
+
+GET /closest-station/:longitude/:latitude  controllers.NYCBikeSharingAppController.GetNearestStationAction(longitude : Double, latitude : Double)
+
+GET /closest-station/:address  controllers.NYCBikeSharingAppController.GetNearestStationAction2(address: String)
+
+GET /popular-station/:month  controllers.NYCBikeSharingAppController.GetPopularStationAction(month : String)
+
+GET /monthly-stats/:month controllers.NYCBikeSharingAppController.GetMonthlyStatsAction(month : String)
